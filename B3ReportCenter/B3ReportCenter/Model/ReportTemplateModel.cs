@@ -15,7 +15,7 @@ namespace B3ReportCenter.Model
             set;
         }
 
-        public UserControl Reportui
+        public UserControl ReportUserControl
         {
             get;
             set;

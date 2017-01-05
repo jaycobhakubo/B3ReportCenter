@@ -67,6 +67,7 @@
     <Compile Include="B3CenterController.cs" />
     <Compile Include="Helper\Notifier.cs" />
     <Compile Include="MainWindowViewModel.cs" />
+    <Compile Include="Model\ReportModel.cs" />
     <Compile Include="Model\ReportTemplateModel.cs" />
     <Compile Include="ViewModel\ReportTemplateViewModel.cs" />
     <Compile Include="ViewModel\ReportViewModel.cs" />

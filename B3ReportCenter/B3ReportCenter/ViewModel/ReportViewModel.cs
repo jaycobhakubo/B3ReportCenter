@@ -13,13 +13,39 @@ namespace B3ReportCenter.ViewModel
 {
     public class ReportViewModel : Notifier
     {
+
+
         private UserControl m_acctReportView;
         private UserControl m_acctHistoryReportView;
         //private UserControl m_dailyReportView;
         private ReportTemplateModel m_reportTemplateModel;
 
-        private ObservableCollection<ReportTemplateModel> m_reportdef;
-        public  ObservableCollection<ReportTemplateModel> ReportDef
+        private UserControl reportUT;
+
+        private ReportTemplateModel SetReportTemplateModel(string rpttitle, UserControl ui)
+        {
+            ui = new UserControl();
+            m_reportTemplateModel = new ReportTemplateModel();
+            m_reportTemplateModel.ReportTitle = rpttitle;
+            m_reportTemplateModel.ReportUserControl = ui;
+            return m_reportTemplateModel;
+        }
+
+        public ReportViewModel()
+        {
+            ReportDef = new ObservableCollection<ReportModel>
+            {
+                new ReportModel {reportTitle="Account",  reportTemplate= new ReportTemplate(SetReportTemplateModel("Account", reportUT))},
+                new ReportModel {reportTitle="Account History",  reportTemplate= new ReportTemplate(SetReportTemplateModel("Account History", reportUT))}
+            };
+
+            ReportSelected = ReportDef.FirstOrDefault();
+          
+            SelectedReportView = m_acctHistoryReportView;
+        }
+
+        private ObservableCollection<ReportModel> m_reportdef;
+        public  ObservableCollection<ReportModel> ReportDef
         {
             get { return m_reportdef; }
             set
@@ -29,8 +55,22 @@ namespace B3ReportCenter.ViewModel
             }
         }
 
-        private ReportTemplateModel m_reportSelected;
-        public ReportTemplateModel ReportSelected
+        private string m_reportTitle;
+            public string ReportTitle
+        {
+            get { return m_reportTitle; }
+            set
+            {
+                if (m_reportTitle != value)
+                {
+                    m_reportTitle = value;
+                    RaisePropertyChanged("ReportTitle");
+                }
+            }
+        }
+
+        private ReportModel m_reportSelected;
+        public ReportModel ReportSelected
         {
             get { return m_reportSelected; }
             set
@@ -38,15 +78,15 @@ namespace B3ReportCenter.ViewModel
                 if (m_reportSelected != value)
                 {
                     m_reportSelected = value;
-              
-                    SelectionChanged(value.ReportTitle);
                     RaisePropertyChanged("ReportSelected");
                 }
             }
         }
 
-        public void SelectionChanged(string ReportName)
+        public void SelectionChanged(ReportModel ReportNamex)
         {
+            string ReportName = ReportNamex.reportTitle;
+
 
             UserControl view = null;
 
@@ -128,31 +168,7 @@ namespace B3ReportCenter.ViewModel
             SelectedReportView = view;
         }
 
-        public ReportViewModel()
-        {
-            ReportDef = new
-            {
-                new ReportTemplateModel {ReportTitle = "Accounts", Reportui = new ReportTemplate(new ReportTemplateViewModel("Accounts")) }    ,
-                new ReportTemplateModel {ReportTitle = "Account History"}
-            };
-
-            ReportSelected = ReportDef.FirstOrDefault();
-                //ReportDef = reportdef;
-    
-            //m_reportTemplateModel.ReportTitle = "Account History";
-            //m_acctHistoryReportView = new AcctHistoryView(new AcctHistoryVm(m_reportTemplateModel));         
-
-            //m_reportTemplateModel = new ReportTemplateModel();
-            //m_reportTemplateModel.ReportTitle = "Account History";
-            //m_acctHistoryReportView = new ReportTemplate(new ReportTemplateViewModel(m_reportTemplateModel));
-
-            //m_reportTemplateModel = new ReportTemplateModel();
-            //m_reportTemplateModel.ReportTitle = "Accounts";
-            //m_acctReportView = new ReportTemplate(new ReportTemplateViewModel(m_reportTemplateModel));
-
-            //LoadReportList();
-           // SelectedReportView = m_acctHistoryReportView;
-        }
+ 
 
 
         private List<string> m_reportList = new List<string>();

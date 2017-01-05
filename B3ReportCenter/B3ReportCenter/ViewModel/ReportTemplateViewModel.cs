@@ -6,19 +6,20 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Controls;
 
 namespace B3ReportCenter.ViewModel
 {
    public  class ReportTemplateViewModel : Notifier
     {
         private string m_reportTitle;
-        private ObservableCollection<ReportTemplateModel> m_reportTemplateModel; //= new ReportTemplateModel();
+        private ReportTemplateModel m_reportTemplateModel; //= new ReportTemplateModel();
 
-        public ReportTemplateViewModel(string rptModel)
+        public ReportTemplateViewModel(ReportTemplateModel reportTemplateModel)
         {
-            ReportTemplate_Vm = rptModel;
+            ReportTemplate_Vm = reportTemplateModel;
             ReportTitle = ReportTemplate_Vm.ReportTitle;
-
+            ReportUserControl = ReportTemplate_Vm.ReportUserControl;
         }
 
         public ReportTemplateModel ReportTemplate_Vm
@@ -31,18 +32,40 @@ namespace B3ReportCenter.ViewModel
             }
         }
 
+        private UserControl m_reportSelected;
+        public UserControl ReportUserControl
+        {
+            get { return m_reportSelected; }
+            set
+            {
+                if (m_reportSelected != value)
+                {
+                    m_reportSelected = value;
+                    RaisePropertyChanged("ReportUserControl");
+                }
+            }
+        }
 
         public string ReportTitle
         {
-            get;
-            //get { return m_reportTitle; }
-            //set
-            //{
-            //    m_reportTitle = value;
-            //    RaisePropertyChanged("ReportTitle");
-            //}
-
+            get { return m_reportTitle; }
+            set
+            {
+                if (m_reportTitle != value)
+                {
+                    m_reportTitle = value;
+                    RaisePropertyChanged("ReportTitle");
+                }
+            }
         }
+
+        public void SelectionChanged(ReportTemplateModel reportTemplateModel)
+        {
+            ReportUserControl = reportTemplateModel.ReportUserControl;
+            ReportTitle = reportTemplateModel.ReportTitle;
+        }
+
+     
 
     }
 }
