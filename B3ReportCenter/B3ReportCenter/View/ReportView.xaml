@@ -1,0 +1,103 @@
+﻿<UserControl x:Class="B3ReportCenter.View.ReportView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+      >
+    <DockPanel>
+
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="200" Name="ReportMenuColumn"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+
+            <Border Grid.Column="1"   Margin ="4">
+                <Grid>
+                    <Grid.RowDefinitions>
+
+                        <RowDefinition />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+
+                    <Border Grid.Row="0"  Margin="8">
+                        <ContentPresenter Margin="0,0,0,0" Name="ReportsTransitionControl" Content="{Binding SelectedReportView}" />
+                    </Border>
+
+                  
+
+                    <Border Grid.Row="1" Margin="8">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="auto"/>
+                                <RowDefinition/>
+                                <RowDefinition Height="auto"/>
+                            </Grid.RowDefinitions>
+
+                            <Border Grid.Row="0" x:Name="errBackground" Margin="0,5" VerticalAlignment="bottom">
+                                <StackPanel Orientation="Horizontal">
+                                    <Ellipse x:Name="errIcon" Fill="{DynamicResource ErrorIcon}" Width="20" Height="20" />
+                                    <Label x:Name="txtblckErr" FontWeight="Bold" />
+                                </StackPanel>
+                            </Border>
+
+                            <Border Grid.Row="1" Style="{DynamicResource SemiTransparentBorder}" >
+                                <Grid Grid.Column="1" Grid.Row="14">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition />
+                                        <ColumnDefinition />
+                                    </Grid.ColumnDefinitions>
+                                    <Button Grid.Column="0"
+                                Margin="15,15" Height="40" Width="140" 
+                                Content="View Report"
+                                HorizontalAlignment="Right" 
+                                x:Name="btnSave"
+                                VerticalAlignment="Top"
+                             
+                                Tag="1"/>
+                                    <!--Click="btnSave_Click"-->
+                                    <Button Grid.Column="1"
+                                Margin="15,15" Height="40" Width="140" 
+                                Content="Print Report"
+                                HorizontalAlignment="Left"
+                                Name="btnCancel" 
+                                VerticalAlignment="Top"
+                            />
+                                    <!--Click="btnCancel_Click"-->
+
+                                </Grid>
+                            </Border>
+                            <Border Grid.Row="2" Margin="0,5" Style="{DynamicResource SemiTransparentNoBorder}" VerticalAlignment="bottom">
+                                <Label HorizontalAlignment="Left" Content="* Indicates a required field" Foreground="Red"/>
+                            </Border>
+
+
+                        </Grid>
+                    </Border>
+
+
+                </Grid>
+            </Border>
+
+            <Border Name="brdrSettingMenuCol" Grid.Column="0"  Style="{DynamicResource DarkBlueBorder}" Margin="4">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition></RowDefinition>
+                    </Grid.RowDefinitions>
+
+                    <ScrollViewer Grid.Row="0" Grid.Column="0"  VerticalScrollBarVisibility="Auto" >
+                        <ListBox Name="lstbx_ReportList" Margin="15"   ItemsSource="{Binding ReportList}" SelectedItem="{Binding ReportSelected}" >
+                            <!--SelectionChanged="ListBox_SelectionChanged"-->
+                        </ListBox>
+                    </ScrollViewer>
+                </Grid>
+            </Border>
+
+
+
+
+        </Grid>
+    </DockPanel>
+</UserControl>

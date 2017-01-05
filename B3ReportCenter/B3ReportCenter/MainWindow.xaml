@@ -1,0 +1,11 @@
+﻿<Window x:Class="B3ReportCenter.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+         xmlns:localReports="clr-namespace:B3ReportCenter.View"
+        Title="MainWindow"  Width="1024" Height="710">
+    <Grid>
+        <Border>
+            <localReports:ReportView/>  
+        </Border>
+    </Grid>
+</Window>
