@@ -67,6 +67,7 @@
     <Compile Include="B3CenterController.cs" />
     <Compile Include="Helper\Common.cs" />
     <Compile Include="Helper\Notifier.cs" />
+    <Compile Include="Helper\StringToBoolConverter.cs" />
     <Compile Include="MainWindowViewModel.cs" />
     <Compile Include="Model\ReportModel.cs" />
     <Compile Include="Model\ReportParameterModel.cs" />

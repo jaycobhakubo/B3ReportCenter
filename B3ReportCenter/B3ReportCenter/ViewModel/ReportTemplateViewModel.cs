@@ -15,13 +15,21 @@ namespace B3ReportCenter.ViewModel
     {
     
         private ReportTemplateModel m_reportTemplateModel; //= new ReportTemplateModel();
+        private ReportParameterModel m_reportParModel;
 
         public ReportTemplateViewModel(ReportTemplateModel reportTemplateModel)
         {
             ReportTemplate_Vm = reportTemplateModel;
             ReportTitle = ReportTemplate_Vm.ReportTitle;
-            //reportParameterView = ReportTemplate_Vm.reportParameter;
-            m_parVm = new ReportParameterViewModel();
+            reportParameterList = ReportTemplate_Vm.ReportParameter;
+            m_parVm = new ReportParameterViewModel(reportParameterList);
+        }
+
+        private List<string> reportParameterList;
+
+        private void SetReportparameter()
+        {
+
         }
 
         public ReportTemplateModel ReportTemplate_Vm

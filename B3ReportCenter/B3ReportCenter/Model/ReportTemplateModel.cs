@@ -16,6 +16,12 @@ namespace B3ReportCenter.Model
             set;
         }
 
+        public List<string> ReportParameter
+        {
+            get;
+            set;
+        }
+
         ////public ReportParameter reportParameter
         ////{
         ////    get;

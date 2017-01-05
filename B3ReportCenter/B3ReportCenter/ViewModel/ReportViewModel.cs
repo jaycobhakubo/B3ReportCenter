@@ -22,21 +22,23 @@ namespace B3ReportCenter.ViewModel
 
         private UserControl reportUT;
 
-        private ReportTemplateModel SetReportTemplateModel(string rpttitle)
+        private ReportTemplateModel SetReportTemplateModel(string rpttitle, string [] parlist)
         {
        
             m_reportTemplateModel = new ReportTemplateModel();
             m_reportTemplateModel.ReportTitle = rpttitle;
-           //m_reportTemplateModel.reportParameter = new ReportParameter();
+            m_reportTemplateModel.ReportParameter = parlist.ToList();
             return m_reportTemplateModel;
         }
+
+        private string[] m_Parameterlist;
 
         public ReportViewModel()
         {
             ReportDef = new ObservableCollection<ReportModel>
             {
-                new ReportModel {reportTitle="Account",  reportTemplate= new ReportTemplate(new ReportTemplateViewModel(SetReportTemplateModel("Account")))}
-                 //new ReportModel {reportTitle="Account History",  reportTemplate= new ReportTemplate(new ReportTemplateViewModel(SetReportTemplateModel("Account History")))},
+                new ReportModel {reportTitle="Account",  reportTemplate= new ReportTemplate(new ReportTemplateViewModel(SetReportTemplateModel("Account", new string [] {"MonthYear" } )))}
+                 //new ReportModel {reportTitle="Account History",  reportTemplate= new ReportTemplate(new ReportTemplateViewModel(SetReportTemplateModel("Account History")))}
             };
 
             ReportSelected = ReportDef.FirstOrDefault();

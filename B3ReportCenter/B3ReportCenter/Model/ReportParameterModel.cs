@@ -8,16 +8,18 @@ namespace B3ReportCenter.Model
 {
     public class ReportParameterModel
     {
-        public string DateMonthString { get; set; }
-        public string DateDayInt { get; set; }
-        public string DateYearInt { get; set; }
-        public int Session { get; set; }
-        public int AccountNumber { get; set; }
-        public string Category { get; set; }
-        public int StartingCard { get; set; }
-        public string DateTimeHourMin { get; set; }
-        public string AMorPM { get; set; }
+        //public string DateMonthString { get; set; }
+        //public string DateDayInt { get; set; }
+        //public string DateYearInt { get; set; }
+        //public int Session { get; set; }
+        //public int AccountNumber { get; set; }
+        //public string Category { get; set; }
+        //public int StartingCard { get; set; }
+        //public string DateTimeHourMin { get; set; }
+        //public string AMorPM { get; set; }
 
+        public string parameter { get; set; }
+        public bool isEnable { get; set; }
 
     }
 }

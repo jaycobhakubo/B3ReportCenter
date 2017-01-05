@@ -28,7 +28,7 @@
         </Border>
         <Grid Grid.Row="1">
             <Border  Name="BReportParameter">
-                <!--<local:ReportParameter DataContext="{Binding reportParameterView}"></local:ReportParameter>-->
+                
                 <local:ReportParameter DataContext="{Binding parVm}"></local:ReportParameter>
             </Border>
         </Grid>

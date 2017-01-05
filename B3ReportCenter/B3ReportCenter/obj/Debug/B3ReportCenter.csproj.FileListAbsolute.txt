@@ -81,3 +81,4 @@ D:\PROJECT\B3ReportCenter\B3ReportCenter\B3ReportCenter\obj\Debug\View\Shared\Da
 D:\PROJECT\B3ReportCenter\B3ReportCenter\B3ReportCenter\obj\Debug\View\ReportParameter.g.cs
 D:\PROJECT\B3ReportCenter\B3ReportCenter\B3ReportCenter\obj\Debug\View\Shared\DatePickerUserControl.g.cs
 D:\PROJECT\B3ReportCenter\B3ReportCenter\B3ReportCenter\obj\Debug\View\ReportParameter.baml
+D:\PROJECT\B3ReportCenter\B3ReportCenter\B3ReportCenter\obj\Debug\B3ReportCenter.csprojResolveAssemblyReference.cache
