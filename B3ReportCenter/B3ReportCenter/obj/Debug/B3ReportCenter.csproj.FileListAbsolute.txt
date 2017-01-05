@@ -16,3 +16,7 @@ D:\_LocalTemp\B3ReportCenter\B3ReportCenter\B3ReportCenter\obj\Debug\B3ReportCen
 D:\_LocalTemp\B3ReportCenter\B3ReportCenter\B3ReportCenter\obj\Debug\B3ReportCenter.csproj.GenerateResource.Cache
 D:\_LocalTemp\B3ReportCenter\B3ReportCenter\B3ReportCenter\obj\Debug\B3ReportCenter.exe
 D:\_LocalTemp\B3ReportCenter\B3ReportCenter\B3ReportCenter\obj\Debug\B3ReportCenter.pdb
+D:\_LocalTemp\B3ReportCenter\B3ReportCenter\B3ReportCenter\obj\Debug\View\ReportTemplate.baml
+D:\_LocalTemp\B3ReportCenter\B3ReportCenter\B3ReportCenter\obj\Debug\View\ReportTemplate.g.cs
+D:\_LocalTemp\B3ReportCenter\B3ReportCenter\B3ReportCenter\obj\Debug\View\AcctHistoryView.g.cs
+D:\_LocalTemp\B3ReportCenter\B3ReportCenter\B3ReportCenter\obj\Debug\View\AcctHistoryView.baml
