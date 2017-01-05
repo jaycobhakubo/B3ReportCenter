@@ -13,8 +13,8 @@ namespace B3ReportCenter.ViewModel
     public class ReportViewModel : Notifier
     {
 
-        //private AcctHistoryView m_acctHistoryReportView;
-        //private AccountView m_accountView;
+        private AcctHistoryView m_acctHistoryReportView;
+
 
         //private AcctHistoryVm m_acctHistoryVm;
 
@@ -40,8 +40,6 @@ namespace B3ReportCenter.ViewModel
         private void InitializeReports(ReportTemplate reportView, ReportTemplateViewModel reportVM, ReportTemplateModel reportModel)
         {
             reportVM = new ReportTemplateViewModel(reportModel);
-
-            // reportView = new reportView(new reportVM(m_reportTemplateModel));
             reportView = new ReportTemplate(reportVM);
         }
 
