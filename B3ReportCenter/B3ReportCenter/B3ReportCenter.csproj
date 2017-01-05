@@ -68,9 +68,13 @@
     <Compile Include="Helper\Notifier.cs" />
     <Compile Include="MainWindowViewModel.cs" />
     <Compile Include="Model\ReportTemplateModel.cs" />
+    <Compile Include="ViewModel\AccountVm.cs" />
     <Compile Include="ViewModel\AcctHistoryVm.cs" />
     <Compile Include="ViewModel\ReportTemplateViewModel.cs" />
     <Compile Include="ViewModel\ReportViewModel.cs" />
+    <Compile Include="View\AccountView.xaml.cs">
+      <DependentUpon>AccountView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\AcctHistoryView.xaml.cs">
       <DependentUpon>AcctHistoryView.xaml</DependentUpon>
     </Compile>
@@ -92,6 +96,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="View\AccountView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\AcctHistoryView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

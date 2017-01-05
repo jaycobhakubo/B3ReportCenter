@@ -13,16 +13,36 @@ namespace B3ReportCenter.ViewModel
     public class ReportViewModel : Notifier
     {
 
-        private AcctHistoryView m_acctHistoryReportView;
-        private ReportTemplateModel m_reportTemplateModel = new ReportTemplateModel();
+        //private AcctHistoryView m_acctHistoryReportView;
+        //private AccountView m_accountView;
+
+        //private AcctHistoryVm m_acctHistoryVm;
+
+        private ReportTemplate m_acctHistoryView;
+        private ReportTemplateViewModel m_acctHistoryVm;
+        private ReportTemplateModel m_acctHistoryModel;// = new ReportTemplateModel();
 
         public ReportViewModel()
         {
-    
-            m_reportTemplateModel.ReportTitle = "Account History Report";
-            m_acctHistoryReportView = new AcctHistoryView(new AcctHistoryVm(m_reportTemplateModel));
+
+            InitializeReports(m_acctHistoryView, m_acctHistoryVm, SetReportM("Account History"));
             LoadReportList();
             //SelectedReportView = m_acctHistoryReportView;
+        }
+
+        private ReportTemplateModel SetReportM(string reportTitle)
+        {
+            ReportTemplateModel reportM = new ReportTemplateModel();
+            reportM.ReportTitle = reportTitle;
+            return reportM;
+        }
+
+        private void InitializeReports(ReportTemplate reportView, ReportTemplateViewModel reportVM, ReportTemplateModel reportModel)
+        {
+            reportVM = new ReportTemplateViewModel(reportModel);
+
+            // reportView = new reportView(new reportVM(m_reportTemplateModel));
+            reportView = new ReportTemplate(reportVM);
         }
 
 
@@ -62,8 +82,9 @@ namespace B3ReportCenter.ViewModel
                 if (m_reportSelected != value)
                 {
                     m_reportSelected = value;
-                    RaisePropertyChanged("ReportSelected");
+                   
                     SelectionChanged(value);
+                    RaisePropertyChanged("ReportSelected");
                 }
             }
         }
@@ -94,7 +115,7 @@ namespace B3ReportCenter.ViewModel
             {
                 case "Accounts":
                     {
-                        view = m_acctHistoryReportView;
+                        view = m_acctHistoryView;
                         break;
                     }
                 //case "Daily":
