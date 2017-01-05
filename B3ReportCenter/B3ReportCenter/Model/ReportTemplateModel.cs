@@ -15,11 +15,11 @@ namespace B3ReportCenter.Model
             set;
         }
 
-        public UserControl ReportUserControl
-        {
-            get;
-            set;
-        }
+        //public UserControl ReportUserControl
+        //{
+        //    get;
+        //    set;
+        //}
 
 
     }

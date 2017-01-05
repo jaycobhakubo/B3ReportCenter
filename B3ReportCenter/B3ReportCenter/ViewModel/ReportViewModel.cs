@@ -22,12 +22,12 @@ namespace B3ReportCenter.ViewModel
 
         private UserControl reportUT;
 
-        private ReportTemplateModel SetReportTemplateModel(string rpttitle, UserControl ui)
+        private ReportTemplateModel SetReportTemplateModel(string rpttitle)
         {
-            ui = new UserControl();
+       
             m_reportTemplateModel = new ReportTemplateModel();
             m_reportTemplateModel.ReportTitle = rpttitle;
-            m_reportTemplateModel.ReportUserControl = ui;
+            //m_reportTemplateModel.ReportUserControl = ui;
             return m_reportTemplateModel;
         }
 
@@ -35,13 +35,13 @@ namespace B3ReportCenter.ViewModel
         {
             ReportDef = new ObservableCollection<ReportModel>
             {
-                new ReportModel {reportTitle="Account",  reportTemplate= new ReportTemplate(SetReportTemplateModel("Account", reportUT))},
-                new ReportModel {reportTitle="Account History",  reportTemplate= new ReportTemplate(SetReportTemplateModel("Account History", reportUT))}
+                new ReportModel {reportTitle="Account",  reportTemplate= new ReportTemplate(new ReportTemplateViewModel(SetReportTemplateModel("Account")))},
+                 new ReportModel {reportTitle="Account History",  reportTemplate= new ReportTemplate(new ReportTemplateViewModel(SetReportTemplateModel("Account History")))},
             };
 
             ReportSelected = ReportDef.FirstOrDefault();
           
-            SelectedReportView = m_acctHistoryReportView;
+            //SelectedReportView = m_acctHistoryReportView;
         }
 
         private ObservableCollection<ReportModel> m_reportdef;
@@ -78,6 +78,7 @@ namespace B3ReportCenter.ViewModel
                 if (m_reportSelected != value)
                 {
                     m_reportSelected = value;
+                    SelectionChanged(value);
                     RaisePropertyChanged("ReportSelected");
                 }
             }
@@ -92,9 +93,9 @@ namespace B3ReportCenter.ViewModel
 
             switch (ReportName)
             {
-                case "Accounts":
+                case "Account":
                     {
-                        view = m_acctReportView;
+                        view = ReportNamex.reportTemplate;
                         break;
                     }
                 //case "Daily":
@@ -139,7 +140,7 @@ namespace B3ReportCenter.ViewModel
                 //    }
                 case "Account History":
                     {
-                        view = m_acctHistoryReportView;
+                        view = ReportNamex.reportTemplate;
                         break;
                     }
                     //case "Winner Cards":

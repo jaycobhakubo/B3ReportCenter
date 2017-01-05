@@ -19,7 +19,7 @@ namespace B3ReportCenter.ViewModel
         {
             ReportTemplate_Vm = reportTemplateModel;
             ReportTitle = ReportTemplate_Vm.ReportTitle;
-            ReportUserControl = ReportTemplate_Vm.ReportUserControl;
+            //ReportUserControl = ReportTemplate_Vm.ReportUserControl;
         }
 
         public ReportTemplateModel ReportTemplate_Vm
@@ -32,19 +32,19 @@ namespace B3ReportCenter.ViewModel
             }
         }
 
-        private UserControl m_reportSelected;
-        public UserControl ReportUserControl
-        {
-            get { return m_reportSelected; }
-            set
-            {
-                if (m_reportSelected != value)
-                {
-                    m_reportSelected = value;
-                    RaisePropertyChanged("ReportUserControl");
-                }
-            }
-        }
+        //private UserControl m_reportSelected;
+        //public UserControl ReportUserControl
+        //{
+        //    get { return m_reportSelected; }
+        //    set
+        //    {
+        //        if (m_reportSelected != value)
+        //        {
+        //            m_reportSelected = value;
+        //            RaisePropertyChanged("ReportUserControl");
+        //        }
+        //    }
+        //}
 
         public string ReportTitle
         {
@@ -59,11 +59,11 @@ namespace B3ReportCenter.ViewModel
             }
         }
 
-        public void SelectionChanged(ReportTemplateModel reportTemplateModel)
-        {
-            ReportUserControl = reportTemplateModel.ReportUserControl;
-            ReportTitle = reportTemplateModel.ReportTitle;
-        }
+        //public void SelectionChanged(ReportTemplateModel reportTemplateModel)
+        //{
+        //    ReportUserControl = reportTemplateModel.ReportUserControl;
+        //    ReportTitle = reportTemplateModel.ReportTitle;
+        //}
 
      
 

@@ -18,8 +18,6 @@ D:\_LocalTemp\B3ReportCenter\B3ReportCenter\B3ReportCenter\obj\Debug\B3ReportCen
 D:\_LocalTemp\B3ReportCenter\B3ReportCenter\B3ReportCenter\obj\Debug\B3ReportCenter.pdb
 D:\_LocalTemp\B3ReportCenter\B3ReportCenter\B3ReportCenter\obj\Debug\View\ReportTemplate.baml
 D:\_LocalTemp\B3ReportCenter\B3ReportCenter\B3ReportCenter\obj\Debug\View\ReportTemplate.g.cs
-D:\_LocalTemp\B3ReportCenter\B3ReportCenter\B3ReportCenter\obj\Debug\View\AcctHistoryView.g.cs
-D:\_LocalTemp\B3ReportCenter\B3ReportCenter\B3ReportCenter\obj\Debug\View\AcctHistoryView.baml
 D:\TempLocal\B3ReportCenter\B3ReportCenter\B3ReportCenter\bin\Debug\B3ReportCenter.exe.config
 D:\TempLocal\B3ReportCenter\B3ReportCenter\B3ReportCenter\bin\Debug\B3ReportCenter.exe
 D:\TempLocal\B3ReportCenter\B3ReportCenter\B3ReportCenter\bin\Debug\B3ReportCenter.pdb
