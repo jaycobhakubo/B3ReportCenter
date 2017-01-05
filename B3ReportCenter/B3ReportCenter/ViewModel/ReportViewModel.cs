@@ -27,7 +27,7 @@ namespace B3ReportCenter.ViewModel
        
             m_reportTemplateModel = new ReportTemplateModel();
             m_reportTemplateModel.ReportTitle = rpttitle;
-            //m_reportTemplateModel.ReportUserControl = ui;
+           //m_reportTemplateModel.reportParameter = new ReportParameter();
             return m_reportTemplateModel;
         }
 
@@ -35,8 +35,8 @@ namespace B3ReportCenter.ViewModel
         {
             ReportDef = new ObservableCollection<ReportModel>
             {
-                new ReportModel {reportTitle="Account",  reportTemplate= new ReportTemplate(new ReportTemplateViewModel(SetReportTemplateModel("Account")))},
-                 new ReportModel {reportTitle="Account History",  reportTemplate= new ReportTemplate(new ReportTemplateViewModel(SetReportTemplateModel("Account History")))},
+                new ReportModel {reportTitle="Account",  reportTemplate= new ReportTemplate(new ReportTemplateViewModel(SetReportTemplateModel("Account")))}
+                 //new ReportModel {reportTitle="Account History",  reportTemplate= new ReportTemplate(new ReportTemplateViewModel(SetReportTemplateModel("Account History")))},
             };
 
             ReportSelected = ReportDef.FirstOrDefault();

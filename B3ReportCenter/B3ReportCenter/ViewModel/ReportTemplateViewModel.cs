@@ -7,19 +7,21 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Controls;
+using B3ReportCenter.View;
 
 namespace B3ReportCenter.ViewModel
 {
    public  class ReportTemplateViewModel : Notifier
     {
-        private string m_reportTitle;
+    
         private ReportTemplateModel m_reportTemplateModel; //= new ReportTemplateModel();
 
         public ReportTemplateViewModel(ReportTemplateModel reportTemplateModel)
         {
             ReportTemplate_Vm = reportTemplateModel;
             ReportTitle = ReportTemplate_Vm.ReportTitle;
-            //ReportUserControl = ReportTemplate_Vm.ReportUserControl;
+            //reportParameterView = ReportTemplate_Vm.reportParameter;
+            m_parVm = new ReportParameterViewModel();
         }
 
         public ReportTemplateModel ReportTemplate_Vm
@@ -32,20 +34,8 @@ namespace B3ReportCenter.ViewModel
             }
         }
 
-        //private UserControl m_reportSelected;
-        //public UserControl ReportUserControl
-        //{
-        //    get { return m_reportSelected; }
-        //    set
-        //    {
-        //        if (m_reportSelected != value)
-        //        {
-        //            m_reportSelected = value;
-        //            RaisePropertyChanged("ReportUserControl");
-        //        }
-        //    }
-        //}
 
+        private string m_reportTitle;
         public string ReportTitle
         {
             get { return m_reportTitle; }
@@ -59,11 +49,29 @@ namespace B3ReportCenter.ViewModel
             }
         }
 
-        //public void SelectionChanged(ReportTemplateModel reportTemplateModel)
+        private ReportParameterViewModel m_parVm;
+        public ReportParameterViewModel parVm
+        {
+            get { return m_parVm; }
+            set { m_parVm = value;
+            RaisePropertyChanged("parVm");
+            }
+        }
+
+
+        //private ReportParameter m_reportparameterView;
+        //public ReportParameter reportParameterView
         //{
-        //    ReportUserControl = reportTemplateModel.ReportUserControl;
-        //    ReportTitle = reportTemplateModel.ReportTitle;
+        //    get { return m_reportparameterView; }
+        //    set
+        //    {
+        //    m_reportparameterView = value;
+        //    RaisePropertyChanged("reportParameterView");
+        //    }
         //}
+
+
+        
 
      
 

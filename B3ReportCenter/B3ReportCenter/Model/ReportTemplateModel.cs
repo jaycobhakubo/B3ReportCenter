@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Controls;
+using B3ReportCenter.View;
 
 namespace B3ReportCenter.Model
 {
@@ -15,11 +16,11 @@ namespace B3ReportCenter.Model
             set;
         }
 
-        //public UserControl ReportUserControl
-        //{
-        //    get;
-        //    set;
-        //}
+        ////public ReportParameter reportParameter
+        ////{
+        ////    get;
+        ////    set;
+        ////}
 
 
     }

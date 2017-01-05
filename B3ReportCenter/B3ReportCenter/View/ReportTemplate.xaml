@@ -4,6 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:viewer="clr-namespace:SAPBusinessObjects.WPF.Viewer;assembly=SAPBusinessObjects.WPF.Viewer"
+              xmlns:local="clr-namespace:B3ReportCenter.View"
              mc:Ignorable="d" 
              >
     <Grid>
@@ -26,7 +27,10 @@
             <viewer:CrystalReportsViewer Name="ReportViewer" Margin="5,0" ShowToolbar="True"/>
         </Border>
         <Grid Grid.Row="1">
-            <Border  Name="ReportParameter"></Border>
+            <Border  Name="BReportParameter">
+                <!--<local:ReportParameter DataContext="{Binding reportParameterView}"></local:ReportParameter>-->
+                <local:ReportParameter DataContext="{Binding parVm}"></local:ReportParameter>
+            </Border>
         </Grid>
 
     </Grid>
