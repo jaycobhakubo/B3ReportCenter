@@ -2,6 +2,7 @@
 using B3ReportCenter.Model;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,10 +12,9 @@ namespace B3ReportCenter.ViewModel
    public  class ReportTemplateViewModel : Notifier
     {
         private string m_reportTitle;
-        private string m_reportTemplateVm;
-        private ReportTemplateModel m_reportTemplateModel = new ReportTemplateModel();
+        private ObservableCollection<ReportTemplateModel> m_reportTemplateModel; //= new ReportTemplateModel();
 
-        public ReportTemplateViewModel(ReportTemplateModel rptModel)
+        public ReportTemplateViewModel(string rptModel)
         {
             ReportTemplate_Vm = rptModel;
             ReportTitle = ReportTemplate_Vm.ReportTitle;
@@ -34,12 +34,13 @@ namespace B3ReportCenter.ViewModel
 
         public string ReportTitle
         {
-            get { return m_reportTitle; }
-            set
-            {
-                m_reportTitle = value;
-                RaisePropertyChanged("ReportTitle");
-            }
+            get;
+            //get { return m_reportTitle; }
+            //set
+            //{
+            //    m_reportTitle = value;
+            //    RaisePropertyChanged("ReportTitle");
+            //}
 
         }
 
