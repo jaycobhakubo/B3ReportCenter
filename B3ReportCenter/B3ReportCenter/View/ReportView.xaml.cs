@@ -24,5 +24,13 @@ namespace B3ReportCenter.View
         {
             InitializeComponent();
         }
+
+
+        //private void ListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        //{
+        //    //var viewModel = ReportsViewModel.Instance;
+        //    //viewModel.SelectionChanged(((ListBox)sender).SelectedValue.ToString());
+
+        //}
     }
 }
