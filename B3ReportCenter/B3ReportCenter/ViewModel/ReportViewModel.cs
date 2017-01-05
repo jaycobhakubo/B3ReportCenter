@@ -12,17 +12,28 @@ namespace B3ReportCenter.ViewModel
 {
     public class ReportViewModel : Notifier
     {
-
-        private AcctHistoryView m_acctHistoryReportView;
+        private UserControl m_acctReportView;
+        private UserControl m_acctHistoryReportView;
+        //private UserControl m_dailyReportView;
         private ReportTemplateModel m_reportTemplateModel = new ReportTemplateModel();
-
         public ReportViewModel()
         {
     
-            m_reportTemplateModel.ReportTitle = "Account History Report";
-            m_acctHistoryReportView = new AcctHistoryView(new AcctHistoryVm(m_reportTemplateModel));
+            //m_reportTemplateModel.ReportTitle = "Account History";
+            //m_acctHistoryReportView = new AcctHistoryView(new AcctHistoryVm(m_reportTemplateModel));
+
+           
+
+            m_reportTemplateModel = new ReportTemplateModel();
+            m_reportTemplateModel.ReportTitle = "Account History";
+            m_acctHistoryReportView = new ReportTemplate(new ReportTemplateViewModel(m_reportTemplateModel));
+
+            m_reportTemplateModel = new ReportTemplateModel();
+            m_reportTemplateModel.ReportTitle = "Accounts";
+            m_acctReportView = new ReportTemplate(new ReportTemplateViewModel(m_reportTemplateModel));
+
             LoadReportList();
-            //SelectedReportView = m_acctHistoryReportView;
+           // SelectedReportView = m_acctHistoryReportView;
         }
 
 
@@ -94,7 +105,7 @@ namespace B3ReportCenter.ViewModel
             {
                 case "Accounts":
                     {
-                        view = m_acctHistoryReportView;
+                        view = m_acctReportView;
                         break;
                     }
                 //case "Daily":
@@ -137,31 +148,31 @@ namespace B3ReportCenter.ViewModel
                 //        view = m_sessionsummaryReportView;
                 //        break;
                 //    }
-                //case "Account History":
-                //    {
-                //        view = m_accountHistoryReportView;
-                //        break;
-                //    }
-                //case "Winner Cards":
-                //    {
-                //        view = m_winnerCardsReportView;
-                //        break;
-                //    }
-                //case "Ball Call":
-                //    {
-                //        view = m_ballCallReportView;
-                //        break;
-                //    }
-                //case "Session Transaction":
-                //    {
-                //        view = m_sessionTranReportView;
-                //        break;
-                //    }
-                //case "Bingo Card":
-                //    {
-                //        view = m_bingoCardReportView;
-                //        break;
-                //    }
+                case "Account History":
+                    {
+                        view = m_acctHistoryReportView;
+                        break;
+                    }
+                    //case "Winner Cards":
+                    //    {
+                    //        view = m_winnerCardsReportView;
+                    //        break;
+                    //    }
+                    //case "Ball Call":
+                    //    {
+                    //        view = m_ballCallReportView;
+                    //        break;
+                    //    }
+                    //case "Session Transaction":
+                    //    {
+                    //        view = m_sessionTranReportView;
+                    //        break;
+                    //    }
+                    //case "Bingo Card":
+                    //    {
+                    //        view = m_bingoCardReportView;
+                    //        break;
+                    //    }
             }
 
 

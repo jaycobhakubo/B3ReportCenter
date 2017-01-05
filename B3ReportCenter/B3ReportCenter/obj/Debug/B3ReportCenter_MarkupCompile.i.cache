@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-D:\_LocalTemp\B3ReportCenter\B3ReportCenter\B3ReportCenter\obj\Debug\
+D:\TempLocal\B3ReportCenter\B3ReportCenter\B3ReportCenter\obj\Debug\
 B3ReportCenter
 none
 false
 DEBUG;TRACE
-D:\_LocalTemp\B3ReportCenter\B3ReportCenter\B3ReportCenter\App.xaml
-4-1781676720
+D:\TempLocal\B3ReportCenter\B3ReportCenter\B3ReportCenter\App.xaml
+3-1880124553
 
-19-1269050328
+17963835257
 17-766298717
-MainWindow.xaml;View\AcctHistoryView.xaml;View\ReportTemplate.xaml;View\ReportView.xaml;
+MainWindow.xaml;View\ReportTemplate.xaml;View\ReportView.xaml;
 
 False
 
