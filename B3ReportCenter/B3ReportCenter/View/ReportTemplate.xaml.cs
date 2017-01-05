@@ -23,6 +23,7 @@ namespace B3ReportCenter.View
         public ReportTemplate()
         {
             InitializeComponent();
+            DataContext = this;
         }
     }
 }

@@ -67,6 +67,9 @@
     <Compile Include="B3CenterController.cs" />
     <Compile Include="Helper\Notifier.cs" />
     <Compile Include="MainWindowViewModel.cs" />
+    <Compile Include="Model\ReportTemplateModel.cs" />
+    <Compile Include="ViewModel\AcctHistoryVm.cs" />
+    <Compile Include="ViewModel\ReportTemplateViewModel.cs" />
     <Compile Include="ViewModel\ReportViewModel.cs" />
     <Compile Include="View\AcctHistoryView.xaml.cs">
       <DependentUpon>AcctHistoryView.xaml</DependentUpon>

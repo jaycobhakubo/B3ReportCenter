@@ -1,4 +1,5 @@
-﻿using System;
+﻿using B3ReportCenter.ViewModel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,10 +21,10 @@ namespace B3ReportCenter.View
     /// </summary>
     public partial class AcctHistoryView : UserControl
     {
-        public AcctHistoryView()
+        public AcctHistoryView(AcctHistoryVm acctVm)
         {
             InitializeComponent();
-            DataContext = this;
+            DataContext = acctVm;
         }
     }
 }
